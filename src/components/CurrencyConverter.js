@@ -3,13 +3,13 @@ import { ExchangeRate } from "./ExchangeRate"
 
 export const CurrencyConverter = () => {
 
-    const currencies = {}
+    const currencies = ['BTC','ETH', 'USD', 'XRP', 'LTC', 'ADA']
     return (
         <div className='currency-converter'>
             <h2>CurrencyConverter</h2>
             <div className='input-box'>
             <table>
-                <body>
+                <tbody>
                     <tr>
                         <td>Primary Currency</td>
                         <td>
@@ -26,7 +26,7 @@ export const CurrencyConverter = () => {
                                 className="currency-options"
                                 
                             >
-                                <options></options>
+                                {currencies.map((currency, _index) =>(<option key={_index}>{currency}</option>))}
 
                             </select>
                         </td>
@@ -52,7 +52,7 @@ export const CurrencyConverter = () => {
                             </select>
                         </td>
                     </tr>
-                    </body>
+                    </tbody>
             </table>
             </div>
             
