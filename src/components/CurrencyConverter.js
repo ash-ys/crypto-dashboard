@@ -6,6 +6,8 @@ import { ExchangeRate } from "./ExchangeRate"
 export const CurrencyConverter = () => {
 
     const currencies = ['BTC','ETH', 'USD', 'XRP', 'LTC', 'ADA']
+    const [chosenPrimaryCurrency, setChosenPrimaryCurrency]= useState(null)
+    console.log(chosenPrimaryCurrency)
     return (
         <div className='currency-converter'>
             <h2>CurrencyConverter</h2>
@@ -23,9 +25,10 @@ export const CurrencyConverter = () => {
                         </td>
                         <td>
                             <select
-                                value = {""}
+                                value = {chosenPrimaryCurrency}
                                 name = "currency-option-1"
                                 className="currency-options"
+                                onChange={(e)=> setChosenPrimaryCurrency(e.target.value)}
                                 
                             >
                                 {currencies.map((currency, _index) =>(<option key={_index}>{currency}</option>))}
