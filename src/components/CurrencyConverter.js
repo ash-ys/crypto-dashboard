@@ -1,4 +1,6 @@
+
 import React from 'react'
+import { useState } from 'react'
 import { ExchangeRate } from "./ExchangeRate"
 
 export const CurrencyConverter = () => {
@@ -47,7 +49,7 @@ export const CurrencyConverter = () => {
                                 className="currency-options"
                                 
                             >
-                                <options></options>
+                                {currencies.map((currency, _index) =>(<option key={_index}>{currency}</option>))}
 
                             </select>
                         </td>
